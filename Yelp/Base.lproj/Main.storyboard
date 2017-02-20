@@ -40,7 +40,7 @@
                                                         <constraint firstAttribute="width" constant="65" id="oqd-ly-rCx"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="1. Grand Pu Bah" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmk-QG-JvT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="1. Grand Pu Bah" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmk-QG-JvT">
                                                     <rect key="frame" x="74" y="8" width="115" height="18"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -60,6 +60,9 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tOA-pK-roR">
                                                     <rect key="frame" x="82" y="34" width="83" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="83" id="5Io-yw-qcY"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88 Mission St, Mission Bay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NJ-iQ-kQP">
                                                     <rect key="frame" x="82" y="51" width="162" height="16"/>
@@ -85,17 +88,17 @@
                                                 <constraint firstItem="RgU-fr-h3d" firstAttribute="leading" secondItem="tOA-pK-roR" secondAttribute="trailing" constant="25" id="Dpz-XA-K4U"/>
                                                 <constraint firstItem="sQW-fk-uIR" firstAttribute="top" secondItem="aRr-3L-WJw" secondAttribute="topMargin" id="DsA-ZB-J5O"/>
                                                 <constraint firstItem="d5A-vk-Rnl" firstAttribute="leading" secondItem="2NJ-iQ-kQP" secondAttribute="leading" id="ET8-SB-yNM"/>
-                                                <constraint firstItem="Bmk-QG-JvT" firstAttribute="leading" secondItem="E2P-aQ-dcw" secondAttribute="trailing" id="G4f-0R-JxE"/>
                                                 <constraint firstItem="FC9-H7-uvF" firstAttribute="leading" secondItem="RgU-fr-h3d" secondAttribute="trailing" constant="17" id="MPo-k5-NMr"/>
                                                 <constraint firstItem="2NJ-iQ-kQP" firstAttribute="top" secondItem="tOA-pK-roR" secondAttribute="bottom" constant="1" id="Mlq-e4-pH0"/>
                                                 <constraint firstItem="tOA-pK-roR" firstAttribute="leading" secondItem="E2P-aQ-dcw" secondAttribute="trailing" constant="8" symbolic="YES" id="OB9-XF-cE2"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="d5A-vk-Rnl" secondAttribute="bottom" constant="12" id="R0j-e7-dhw"/>
-                                                <constraint firstItem="Bmk-QG-JvT" firstAttribute="top" secondItem="aRr-3L-WJw" secondAttribute="top" constant="8" id="TXR-la-Bw6"/>
-                                                <constraint firstItem="sQW-fk-uIR" firstAttribute="leading" secondItem="Bmk-QG-JvT" secondAttribute="trailing" constant="79" id="V0X-sx-vUt"/>
+                                                <constraint firstItem="Bmk-QG-JvT" firstAttribute="top" secondItem="sQW-fk-uIR" secondAttribute="top" id="ViW-48-bYQ"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="E2P-aQ-dcw" secondAttribute="bottom" constant="24" id="W85-WP-X2Y"/>
+                                                <constraint firstItem="tOA-pK-roR" firstAttribute="top" secondItem="Bmk-QG-JvT" secondAttribute="bottom" constant="8" symbolic="YES" id="YDS-OQ-cW7"/>
+                                                <constraint firstItem="Bmk-QG-JvT" firstAttribute="leading" secondItem="E2P-aQ-dcw" secondAttribute="trailing" id="YKW-Fl-Qgo"/>
                                                 <constraint firstItem="sQW-fk-uIR" firstAttribute="trailing" secondItem="aRr-3L-WJw" secondAttribute="trailingMargin" id="e77-KR-yff"/>
+                                                <constraint firstItem="sQW-fk-uIR" firstAttribute="leading" secondItem="Bmk-QG-JvT" secondAttribute="trailing" constant="79" id="enR-qj-2JY"/>
                                                 <constraint firstItem="tOA-pK-roR" firstAttribute="leading" secondItem="2NJ-iQ-kQP" secondAttribute="leading" id="haL-Ty-yQX"/>
-                                                <constraint firstItem="tOA-pK-roR" firstAttribute="top" secondItem="Bmk-QG-JvT" secondAttribute="bottom" constant="8" symbolic="YES" id="l8M-Xk-vjc"/>
                                                 <constraint firstItem="FC9-H7-uvF" firstAttribute="top" secondItem="sQW-fk-uIR" secondAttribute="bottom" constant="2" id="lXI-cy-r25"/>
                                                 <constraint firstItem="tOA-pK-roR" firstAttribute="top" secondItem="RgU-fr-h3d" secondAttribute="top" id="oIg-RD-03x"/>
                                                 <constraint firstItem="d5A-vk-Rnl" firstAttribute="top" secondItem="2NJ-iQ-kQP" secondAttribute="bottom" id="pwF-3v-rHr"/>

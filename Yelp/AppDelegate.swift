@@ -12,10 +12,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let prefs = UserDefaults.standard
 
-
+    var searchWord : String = "" { // default to Best Match
+        didSet {
+            prefs.setValue(searchWord, forKey: "searchWord")
+        }
+    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if let term = prefs.string(forKey: "searchWord") {
+            searchWord = term;
+        }
         return true
     }
 
