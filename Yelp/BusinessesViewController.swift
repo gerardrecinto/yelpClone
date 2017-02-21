@@ -15,12 +15,15 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     lazy var searchBar = UISearchBar()
    // var businessSearch = Business(dictionary: filteredData)
     var searchTerm = appDelegate.searchWord
-
+    var filteredDict = NSDictionary()
+    var filteredData: [Business]!
+    var otherBusiness: [Business]!
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.sizeToFit()
+        searchBar.delegate = self
         self.navigationItem.titleView = searchBar
         tableView.delegate = self
         tableView.dataSource = self
@@ -44,6 +47,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
          //Example of Yelp search with more search options specified
         Business.searchWithTerm(term: "Restaurants", completion: { (businesses: [Business]?, error: Error?) -> Void in
          self.businesses = businesses
+         self.otherBusiness = businesses
          self.tableView.reloadData()
             if let businesses = businesses {
          for business in businesses {
@@ -60,19 +64,50 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
 
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-
-        
         if searchText.isEmpty {
+            Business.searchWithTerm(term: "Restaurants", completion: { (businesses: [Business]?, error: Error?) -> Void in
+                self.businesses = businesses
+                self.otherBusiness = businesses
+                self.tableView.reloadData()
+            })
             searchBar.endEditing(false)
         } else {
+            
             searchReload()
+            self.tableView.reloadData()
         }
     }
-
+           // let filter = Business(dictionary: filteredDict)
+       /*     self.filteredData = self.businesses!.filter{ (data: Business) -> Bool in
+                if let businesses = businesses {
+                    for business in businesses {
+                        let name = business.name
+                        let range = name?.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil)
+                        if range == nil {
+                            // no match
+                            return false
+                        } else if name?.distance(from: (name?.startIndex)!, to: range!.lowerBound) == 0 {
+                            // match is at beginning of movie title
+                            return true
+                        } else {
+                            // match is elsewhere within the movie title
+                            return false
+                    }
+                }
+                
+        }
+                self.tableView.reloadData()
+                return true
+    }
+        }
+    }*/
     func searchReload(){
+        
         appDelegate.searchWord = searchTerm
         searchTerm = searchBar.text!
 
+            
+        
         Business.searchWithTerm(term: searchTerm, completion: { (businesses: [Business]?, error: Error?) -> Void in
             self.businesses = businesses
             self.tableView.reloadData()
@@ -81,12 +116,14 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             print(business.name!)
             print(business.address!)
             }
-            }
-            }
+        }
+        }
         )
-
+        
+    self.businesses = otherBusiness
+    self.tableView.reloadData()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
