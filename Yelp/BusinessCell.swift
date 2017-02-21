@@ -35,6 +35,7 @@ class BusinessCell: UITableViewCell {
         thumbImageView.layer.cornerRadius = 3
         thumbImageView.clipsToBounds = true
         nameLabel.preferredMaxLayoutWidth = nameLabel.frame.size.width
+        self.backgroundColor = UIColor.cyan
         // Initialization code
     }
     
